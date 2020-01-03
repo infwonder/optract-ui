@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: optract-ui
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: optract-ui
+  template:
+    metadata:
+      name: optract-ui
+      labels:
+        app: optract-ui
+    spec:
+      containers:
+        - name: optract-ui
+          image: infwonder/optract-ui
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: optract-webui-service
+spec:
+  selector:
+    app: optract-ui
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8081
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: optract-webui-rules
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+  - host: optract.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: optract-webui-service
+          servicePort: 8081

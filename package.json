@@ -1,0 +1,51 @@
+{
+  "name": "dlogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "dev-server": "webpack-dev-server"
+  },
+  "babel": {
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ],
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "keywords": [],
+  "author": "Jason Lin & Leon Zhang",
+  "license": "GPLv3",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jayson": "^2.1.0",
+    "live-server": "^1.2.0",
+    "marked": "^0.8.0",
+    "multihash": "^0.1.0",
+    "multihashes": "^0.4.15",
+    "react": "^16.5.2",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.5.2",
+    "react-dropdown": "^1.6.2",
+    "react-quill": "^1.3.1",
+    "react-render-html": "^0.6.0",
+    "react-toggle": "^4.0.2",
+    "reflux": "^6.4.1",
+    "secure-random-password": "^0.2.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "2.0.13",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
+}
