@@ -17,7 +17,10 @@ RUN npm run build
 
 FROM nginx
 
-COPY --from=builder /optract/public/* /usr/share/nginx/html/
+COPY --from=builder /optract/public/*.html /usr/share/nginx/html/
+COPY --from=builder /optract/public/*.css /usr/share/nginx/html/
+COPY --from=builder /optract/public/*.js /usr/share/nginx/html/
+COPY --from=builder /optract/public/assets /usr/share/nginx/html/assets
 
 EXPOSE 80
 
