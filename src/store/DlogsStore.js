@@ -81,7 +81,7 @@ class DlogsStore extends Reflux.Store {
 		//console.dir(this.state.articleCache.startBlk);
 		//this.state.articles = this.state.articleCache.queries;
 		OptractRest.get("articles/cache").then((data) => {
-			this.setState({ articles: data });
+			this.setState({ articles: data.queries });
 		})
 	}
 
