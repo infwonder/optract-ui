@@ -42,7 +42,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-  - host: optract.com
+  - host: app.aws.optract.com
     http:
       paths:
       - path: /
