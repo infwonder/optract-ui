@@ -29,7 +29,7 @@
     "babel-preset-react": "^6.24.1",
     "jayson": "^2.1.0",
     "live-server": "^1.2.0",
-    "marked": "^0.8.0",
+    "marked": "^4.0.10",
     "multihash": "^0.1.0",
     "multihashes": "^0.4.15",
     "react": "^16.5.2",
